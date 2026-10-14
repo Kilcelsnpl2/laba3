@@ -9,8 +9,7 @@
 using namespace std;
 
 int main() {
-  double theWidthOfTheNozzleChannels, gasDensity, dynamicViscosityOfTheGas, Re, csi;
-  double gasVelocity[] = { 1, 2, 5, 10, 20 };
+  double theWidthOfTheNozzleChannels, gasDensity, dynamicViscosityOfTheGas, Re, csi, gasVelocity, gasVelocitysmS, velocityCount;
 
   cout << "theWidthOfTheNozzleChannels = ";
   cin >> theWidthOfTheNozzleChannels;
@@ -21,11 +20,17 @@ int main() {
   cout << "dynamicViscosityOfTheGas = ";
   cin >> dynamicViscosityOfTheGas;
 
+  cout << "velocityCount = ";
+  cin >> velocityCount;
+
   double theWidthOfTheNozzleChannelssm = theWidthOfTheNozzleChannels / 10.0; // mm => сm
 
-  for (int i = 0; i < 5; ++i) {
-		
-	double gasVelocitysmS = gasVelocity[i] * 100.0; // m/s => cm/s
+  for (int velocityIndex = 0; velocityIndex < velocityCount; ++velocityIndex) {
+
+	cout << "gasVelocity; = ";
+	cin >> gasVelocity;
+
+	gasVelocitysmS = gasVelocity * 100.0; // m/s => cm/s
 	Re = ((gasVelocitysmS * theWidthOfTheNozzleChannelssm * gasDensity) / dynamicViscosityOfTheGas);
 
 	if (Re < 2500) {
@@ -38,5 +43,4 @@ int main() {
   }
 
   return 0;
-
 }
