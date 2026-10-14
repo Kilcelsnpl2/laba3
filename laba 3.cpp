@@ -1,8 +1,8 @@
 ﻿/*************************
- * Автор: Карпов Кирилл  *
- * Дата:	 28.12.2007  *
- * Название: вариант 10  *
- *************************/
+* Автор: Карпов Кирилл   *
+* Дата:	 28.12.2007      *
+* Название: вариант 10   *
+*************************/
 #include <iostream>
 #include <cmath>
 
@@ -20,7 +20,7 @@ int main() {
   cout << "dynamicViscosityOfTheGas = ";
   cin >> dynamicViscosityOfTheGas;
 
-  cout << "velocityCount = ";
+  cout << "Enter the number of speed values = ";
   cin >> velocityCount;
 
   double theWidthOfTheNozzleChannelssm = theWidthOfTheNozzleChannels / 10.0; // mm => сm
@@ -34,9 +34,9 @@ int main() {
 	Re = ((gasVelocitysmS * theWidthOfTheNozzleChannelssm * gasDensity) / dynamicViscosityOfTheGas);
 
 	if (Re < 2500) {
-		csi = 2.62 / pow(Re, 0.65);
+	  csi = 2.62 / pow(Re, 0.65);
 	} else {
-		csi = 0.125 / pow(Re, 0.26);
+	  csi = 0.125 / pow(Re, 0.26);
     }
 		
 	cout << "Re = " << Re << " csi = " << csi << endl;
