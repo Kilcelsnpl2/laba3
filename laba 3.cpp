@@ -9,7 +9,7 @@
 using namespace std;
 
 int main() {
-  double l, p, Mu, Re, ksi, W, Wcms, velocityCount;
+  double l, p, Mu, Re, ksi, W, Wcms, velocityCount, lcm;
 
   cout << "Width Of Nozzle Channels = ";
   cin >> l;
@@ -23,7 +23,7 @@ int main() {
   cout << "Enter the number of speed values = ";
   cin >> velocityCount;
 
-  double lcm = l / 10.0; // mm => сm
+  lcm = l / 10.0; // mm => сm
 
   for (int velocityIndex = 0; velocityIndex < velocityCount; ++velocityIndex) {
 
