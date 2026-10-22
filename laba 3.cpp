@@ -9,37 +9,37 @@
 using namespace std;
 
 int main() {
-  double theWidthOfTheNozzleChannels, gasDensity, dynamicViscosityOfTheGas, Re, csi, gasVelocity, gasVelocitysmS, velocityCount;
+  double l, p, Mu, Re, ksi, W, Wcms, velocityCount;
 
-  cout << "theWidthOfTheNozzleChannels = ";
-  cin >> theWidthOfTheNozzleChannels;
+  cout << "Width Of Nozzle Channels = ";
+  cin >> l;
 
-  cout << "gasDensity = ";
-  cin >> gasDensity;
+  cout << "Gas Density = ";
+  cin >> p;
 
-  cout << "dynamicViscosityOfTheGas = ";
-  cin >> dynamicViscosityOfTheGas;
+  cout << "dynamic Viscosity Of Gas = ";
+  cin >> Mu;
 
   cout << "Enter the number of speed values = ";
   cin >> velocityCount;
 
-  double theWidthOfTheNozzleChannelssm = theWidthOfTheNozzleChannels / 10.0; // mm => сm
+  double lcm = l / 10.0; // mm => сm
 
   for (int velocityIndex = 0; velocityIndex < velocityCount; ++velocityIndex) {
 
-	cout << "gasVelocity; = ";
-	cin >> gasVelocity;
+	cout << "Gas Velocity = ";
+	cin >> W;
 
-	gasVelocitysmS = gasVelocity * 100.0; // m/s => cm/s
-	Re = ((gasVelocitysmS * theWidthOfTheNozzleChannelssm * gasDensity) / dynamicViscosityOfTheGas);
+	Wcms = W * 100.0; // m/s => cm/s
+	Re = ((Wcms * lcm * p) / Mu);
 
 	if (Re < 2500) {
-	  csi = 2.62 / pow(Re, 0.65);
+	  ksi = 2.62 / pow(Re, 0.65);
 	} else {
-	  csi = 0.125 / pow(Re, 0.26);
+	  ksi = 0.125 / pow(Re, 0.26);
     }
 		
-	cout << "Re = " << Re << " csi = " << csi << endl;
+	cout << "Re = " << Re << " csi = " << ksi << endl;
   }
 
   return 0;
