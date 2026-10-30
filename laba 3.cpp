@@ -1,15 +1,17 @@
 ﻿/*************************
 * Автор: Карпов Кирилл   *
-* Дата:	 22.10.2026      *
+* Дата:	 30.10.2026      *
 * Название: вариант 10   *
 *************************/
+
 #include <iostream>
 #include <cmath>
 
 using namespace std;
 
 int main() {
-  double l, p, Mu, Re, ksi, W, Wcms, velocityCount, lcm;
+  double l, p, Mu, ksi, W, Wcms, velocityCount, lcm;
+  int Re;
 
   cout << "Width Of Nozzle Channels = ";
   cin >> l;
